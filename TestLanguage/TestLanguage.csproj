@@ -60,7 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommentAttribute.cs" />
+    <Compile Include="TestInitializer.cs" />
+    <Compile Include="Copy of TestNullable.cs" />
     <Compile Include="TestStaticClass.cs" />
     <Compile Include="TestNullable.cs" />
     <Compile Include="Program.cs" />
