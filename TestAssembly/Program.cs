@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
 using Castle.Windsor.Installer;
+using Castle.Windsor;
 
 namespace TestAssembly
 {
@@ -15,7 +15,6 @@ namespace TestAssembly
 		{
 			Castle3();
 			Castle2();
-			
 			
 			Console.ReadKey(true);
 		}

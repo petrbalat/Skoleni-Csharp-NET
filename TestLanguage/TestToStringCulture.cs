@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Globalization;
 using System.Threading;
+using NUnit.Framework;
 
 namespace TestLanguage
 {
+    [TestFixture]
 	public class TestToStringCulture
 	{
-		public static void Main(params string[] args)
+        [Test]
+		public void TestToString()
 		{
 			Console.WriteLine(3.14.ToString());
+            Console.WriteLine(3.14.ToString(CultureInfo.InvariantCulture));
 
 			Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 
@@ -17,10 +21,9 @@ namespace TestLanguage
 
 			Console.WriteLine(3.14.ToString("c"));
 			Console.WriteLine(3.14.ToString("c", new CultureInfo("cs-CZ")));
-			Console.WriteLine(3.14.ToString("c", new CultureInfo("sk-SK")));//workaround http://blog.aspnet.sk/mirkub/archive/2009/01/15/eur-mena-v-net-aplik-225-ciach-pre-quot-sk-sk-quot.aspx
+			Console.WriteLine(3.14.ToString("c", new CultureInfo("sk-SK")));
 
-			Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs-CZ");// napr pro 
-			Console.ReadKey(true);
+			Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs-CZ");// napr pro WPF nebo WinForms
 		}
 	}
 }
