@@ -13,7 +13,7 @@
         }
     }
 
-    struct MyStruct
+    struct MyStruct 
     {
         public override string ToString()
         {
