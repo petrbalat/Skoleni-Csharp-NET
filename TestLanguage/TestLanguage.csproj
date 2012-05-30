@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestRegion.cs" />
     <Compile Include="TestInitializer.cs" />
     <Compile Include="TestStaticClass.cs" />
     <Compile Include="TestNullable.cs" />
