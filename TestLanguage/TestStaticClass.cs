@@ -12,4 +12,9 @@
             return string.IsNullOrWhiteSpace(str);
         }
     }
+
+    struct MyStruct
+    {
+         
+    }
 }

@@ -4,13 +4,12 @@
     <ProjectGuid>{830F2571-9EAD-4033-99B2-8059CBE464C4}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>TestLanguage</RootNamespace>
     <AssemblyName>TestLanguage</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>TestLanguage.Program</StartupObject>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
     <WarningLevel>4</WarningLevel>
@@ -62,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommentAttribute.cs" />
+    <Compile Include="TestStaticClass.cs" />
     <Compile Include="TestNullable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -7,23 +7,23 @@ namespace TestLanguage
     public class TestPtr
     {
         [Test]
-        public static void Main(string[] args)
+        public void PtrTest()
         {
             int b = 4;
-            Console.WriteLine(string.Format("64bit runtime {0}", Environment.Is64BitProcess));
+            Assert.IsFalse(Environment.Is64BitProcess);
             unsafe //kvuli IntPtr
             {
-                Console.WriteLine(string.Format("int {0} IntPtr {1}", sizeof(int), sizeof(IntPtr)));
+                Assert.AreEqual(4, sizeof(int));
+                Assert.AreEqual(4, sizeof(IntPtr));
                 int* iPtr = &b;
                 Console.WriteLine((int)iPtr); // adresa v pameti
-                Console.WriteLine(*iPtr); // hodnota kam ukazue
+
+                Assert.AreEqual(4, *iPtr);
+
                 *iPtr = 5;
             }
 
             Console.WriteLine(string.Format("E1 {0} E2 {1}", sizeof(E1), sizeof(E2)));
-
-
-            Console.ReadKey(true);
         }
 
         enum E1 : byte

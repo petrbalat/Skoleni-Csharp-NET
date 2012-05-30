@@ -1,10 +1,10 @@
 ﻿/*
- * Created by SharpDevelop.
  * User: Petr Balat
  * Date: 28.5.2012
  * 
  */
 using System;
+using NUnit.Framework;
 
 namespace TestLanguage
 {

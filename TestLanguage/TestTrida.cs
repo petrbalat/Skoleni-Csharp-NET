@@ -27,6 +27,11 @@ namespace TestLanguage
         {
             Console.WriteLine("TestTrida");
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 
     [TestFixture]
@@ -34,6 +39,7 @@ namespace TestLanguage
     {
         public SubTestTrida() : base(string.Empty)
         {
+            string a = new string(new char[] {'a'});
         }
 
         public new void TestVirtualMetod()
