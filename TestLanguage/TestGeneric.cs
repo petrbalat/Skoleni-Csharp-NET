@@ -23,6 +23,7 @@ namespace TestLanguage
                                                       new TestTrida("e") { Size = 2 },
                                                       new TestTrida("f") { Size = 8 },
                                                   };
+            testTridas.Add(new TestTrida("g") {Size = 1} );
             Console.WriteLine(testTridas);
         }
 

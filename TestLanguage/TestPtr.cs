@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using NUnit.Framework;
 
 namespace TestLanguage
@@ -6,6 +7,9 @@ namespace TestLanguage
     [TestFixture]
     public class TestPtr
     {
+        [DllImport("User32.dll")]
+        public static extern int MessageBox(int h, string m, string c, int type);
+
         [Test]
         public void PtrTest()
         {
@@ -24,6 +28,8 @@ namespace TestLanguage
             }
 
             Console.WriteLine(string.Format("E1 {0} E2 {1}", sizeof(E1), sizeof(E2)));
+
+            MessageBox(0, "Hello", "My Message Box", 0);
         }
 
         enum E1 : byte
