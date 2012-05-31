@@ -61,8 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestClosures.cs" />
+    <Compile Include="TestEnumerable.cs" />
     <Compile Include="StructTest.cs" />
-    <Compile Include="SubTestTrida.cs" />
+    <Compile Include="TestDispose.cs" />
     <Compile Include="TestRegion.cs" />
     <Compile Include="TestInitializer.cs" />
     <Compile Include="TestStaticClass.cs" />
