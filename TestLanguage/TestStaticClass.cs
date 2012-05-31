@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NUnit.Framework;
+using System.Linq;
 
 namespace TestLanguage
 {
@@ -13,9 +14,9 @@ namespace TestLanguage
             Assert.IsFalse(" ".IsNullOrEmpty());
             Assert.IsTrue(" ".IsNullOrWhiteSpace());
             string str = null;
-            Assert.IsTrue(str.IsNullOrWhiteSpace());
+            Assert.IsTrue(str.IsNullOrWhiteSpace());//voláno jako StringHelper.IsNullOrWhiteSpace(str) takze bez vyhozeni vyjimky NullReferenceException
 
-            IEnumerable<string> coll = new[] { "aaa", "bbb" }.Prepend("ccc");
+            string[] coll = new[] { "aaa", "bbb" }.Prepend("ccc").ToArray();
             Console.WriteLine(coll);
         }
     }
