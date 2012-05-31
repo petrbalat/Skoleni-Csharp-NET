@@ -18,7 +18,7 @@ namespace TestLanguage
 
 		    BigInteger bigInteger1 = BigInteger.Parse("14574163434183438448635463483");
 		    BigInteger bigInteger2 = BigInteger.Parse("9486348343842341534348343843");
-		    BigInteger bigInteger = bigInteger1 + bigInteger2;
+		    BigInteger bigInteger = bigInteger1 + bigInteger2;//výhoda možnosti přetížení operátoru :-)
             Console.WriteLine(bigInteger);
 
 		    Console.Write("Press any key to continue . . . ");

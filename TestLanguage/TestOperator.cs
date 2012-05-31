@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using NUnit.Framework;
 
 namespace TestLanguage
@@ -13,6 +14,19 @@ namespace TestLanguage
             Tvor maruska = new Tvor { Typ = Pohlavi.ZENA };
             Tvor tvor = pepa + maruska;
             Console.WriteLine(tvor);
+        }
+        
+        [Test]
+        public void TestBigInteger()
+        {
+            BigInteger bigInteger1 = BigInteger.Parse("14574163434183438448635463483");
+            BigInteger bigInteger2 = BigInteger.Parse("9486348343842341534348343843");
+            BigInteger bigInteger = bigInteger1 + bigInteger2;//výhoda přetížení operátoru :-)
+            Assert.AreEqual("24060511778025779982983807326", bigInteger.ToString());
+
+            BigInteger integer = new BigInteger(5);
+            int i = (int)integer;
+            Assert.AreEqual(5, i);
         }
     }
 
