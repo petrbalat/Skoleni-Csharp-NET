@@ -21,7 +21,7 @@ namespace TestAssembly
 		
 		static void Castle2()
 		{
-			oldwinsor::Castle.Windsor.WindsorContainer container2 = new oldwinsor::Castle.Windsor.WindsorContainer();
+			var container2 = new oldwinsor::Castle.Windsor.WindsorContainer();
 			container2.AddComponent<IDateTimeProvider, LocalDateTimeProvider>();
 			var king = container2.Resolve<IDateTimeProvider>();
 			Console.WriteLine(king.Now);
