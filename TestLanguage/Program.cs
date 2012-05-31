@@ -5,6 +5,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using NUnit.Framework;
 
 namespace TestLanguage
@@ -13,11 +14,14 @@ namespace TestLanguage
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
-
 		    var coll = new HashSet<int> {1, 2, 5};
 
-			Console.Write("Press any key to continue . . . ");
+		    BigInteger bigInteger1 = BigInteger.Parse("14574163434183438448635463483");
+		    BigInteger bigInteger2 = BigInteger.Parse("9486348343842341534348343843");
+		    BigInteger bigInteger = bigInteger1 + bigInteger2;
+            Console.WriteLine(bigInteger);
+
+		    Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}
 	}
