@@ -10,7 +10,7 @@ namespace TestLanguage
         void TestVirtualMetod();
     }
 
-    class TestTrida : ITestTrida
+    public class TestTrida : ITestTrida
     {
         public TestTrida(string par)
         {
@@ -27,19 +27,13 @@ namespace TestLanguage
         {
             Console.WriteLine("TestTrida");
         }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 
     [TestFixture]
-    class SubTestTrida : TestTrida
+    public sealed class SubTestTrida : TestTrida, ITestTrida
     {
-        public SubTestTrida() : base(string.Empty)
+        public SubTestTrida() : base("construktor predka")
         {
-            string a = new string(new char[] {'a'});
         }
 
         public new void TestVirtualMetod()

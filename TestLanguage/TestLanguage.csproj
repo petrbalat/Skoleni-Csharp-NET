@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="StructTest.cs" />
+    <Compile Include="SubTestTrida.cs" />
     <Compile Include="TestRegion.cs" />
     <Compile Include="TestInitializer.cs" />
     <Compile Include="TestStaticClass.cs" />
