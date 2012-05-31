@@ -1,6 +1,26 @@
-﻿namespace TestLanguage
+﻿using System;
+using System.Collections.Generic;
+using NUnit.Framework;
+
+namespace TestLanguage
 {
-    public static class TestStaticClass
+    [TestFixture]
+    public class TestStaticClass
+    {
+        [Test]
+        public void Test()
+        {
+            Assert.IsFalse(" ".IsNullOrEmpty());
+            Assert.IsTrue(" ".IsNullOrWhiteSpace());
+            string str = null;
+            Assert.IsTrue(str.IsNullOrWhiteSpace());
+
+            IEnumerable<string> coll = new[] { "aaa", "bbb" }.Prepend("ccc");
+            Console.WriteLine(coll);
+        }
+    }
+
+    public static class StringHelper
     {
         public static bool IsNullOrEmpty(this string str)
         {
@@ -13,11 +33,24 @@
         }
     }
 
-    struct MyStruct 
+    public static class EnumerableHelper
     {
-        public override string ToString()
+        public static IEnumerable<T> Prepend<T>(this IEnumerable<T> str, T prvek)
         {
-            return base.ToString();
+            yield return prvek;
+            foreach (T t in str)
+            {
+                yield return t;
+            }
+        }
+
+        public static IEnumerable<T> Append<T>(this IEnumerable<T> str, T prvek)
+        {
+            foreach (T t in str)
+            {
+                yield return t;
+            }
+            yield return prvek;
         }
     }
 }

@@ -65,13 +65,13 @@
     <Compile Include="TestOperator.cs" />
     <Compile Include="TestClosures.cs" />
     <Compile Include="TestEnumerable.cs" />
+    <Compile Include="TestStaticClass.cs" />
     <Compile Include="TestStruct.cs" />
     <Compile Include="TestDispose.cs" />
     <Compile Include="TestExpression.cs" />
     <Compile Include="TestLinq.cs" />
     <Compile Include="TestRegion.cs" />
     <Compile Include="TestInitializer.cs" />
-    <Compile Include="TestStaticClass.cs" />
     <Compile Include="TestNullable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

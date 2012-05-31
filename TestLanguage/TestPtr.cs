@@ -13,19 +13,20 @@ namespace TestLanguage
         [Test]
         public void PtrTest()
         {
-            int b = 4;
+            int actual = 4;
             Assert.IsFalse(Environment.Is64BitProcess);
             unsafe //kvuli IntPtr
             {
                 Assert.AreEqual(4, sizeof(int));
                 Assert.AreEqual(4, sizeof(IntPtr));
-                int* iPtr = &b;
+                int* iPtr = &actual;
                 Console.WriteLine((int)iPtr); // adresa v pameti
 
                 Assert.AreEqual(4, *iPtr);
 
                 *iPtr = 5;
             }
+            Assert.AreEqual(5, actual);
 
             Console.WriteLine(string.Format("E1 {0} E2 {1}", sizeof(E1), sizeof(E2)));
 
