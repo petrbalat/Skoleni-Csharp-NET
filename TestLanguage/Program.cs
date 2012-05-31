@@ -16,7 +16,7 @@ namespace TestLanguage
 			Console.WriteLine("Hello World!");
 
 		    var coll = new HashSet<int> {1, 2, 5};
-			
+
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}
