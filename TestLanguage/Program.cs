@@ -4,6 +4,7 @@
  * 
  */
 using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace TestLanguage
@@ -13,8 +14,8 @@ namespace TestLanguage
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Hello World!");
-			
-			// TODO: Implement Functionality Here
+
+		    var coll = new HashSet<int> {1, 2, 5};
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
