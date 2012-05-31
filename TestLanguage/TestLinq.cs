@@ -11,11 +11,9 @@ namespace TestLanguage
         [Test]
         public void TestToObjects()
         {
-            IEnumerable<string> cisla = from i in Enumerable.Range(1, 1000)
-                        let pom = i * 2
-                        where pom % 3 == 0
-                        orderby i descending 
-                        select i.ToString();
+            IEnumerable<string> cisla = Enumerable.Range(1, 1000).
+                Select(i => new {i, pom = i*2}).Where(t => t.pom%3 == 0 ||@t.i > 100).
+                    OrderByDescending(t => t.i).Select(t => t.i.ToString());
 
 
             foreach (var i in cisla)

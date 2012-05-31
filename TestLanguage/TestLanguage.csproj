@@ -65,6 +65,7 @@
     <Compile Include="TestEnumerable.cs" />
     <Compile Include="StructTest.cs" />
     <Compile Include="TestDispose.cs" />
+    <Compile Include="TestExpression.cs" />
     <Compile Include="TestLinq.cs" />
     <Compile Include="TestRegion.cs" />
     <Compile Include="TestInitializer.cs" />
