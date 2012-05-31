@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestGeneric.cs" />
     <Compile Include="TestOperator.cs" />
     <Compile Include="TestClosures.cs" />
     <Compile Include="TestEnumerable.cs" />
