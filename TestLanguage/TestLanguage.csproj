@@ -98,11 +98,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="skoleniDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>skoleniDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="TestGeneric.cs" />
     <Compile Include="TestOperator.cs" />
     <Compile Include="TestClosures.cs" />
@@ -136,17 +131,6 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="skoleniDataSet.xsc">
-      <DependentUpon>skoleniDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="skoleniDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>skoleniDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="skoleniDataSet.xss">
-      <DependentUpon>skoleniDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
