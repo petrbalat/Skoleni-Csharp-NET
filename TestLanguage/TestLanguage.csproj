@@ -92,6 +92,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestPtr.cs" />
+    <Compile Include="TestStruct.cs" />
     <Compile Include="TestToStringCulture.cs" />
     <Compile Include="TestTrida.cs" />
   </ItemGroup>
