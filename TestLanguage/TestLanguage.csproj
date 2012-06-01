@@ -116,10 +116,10 @@
     <Compile Include="TestToStringCulture.cs" />
     <Compile Include="TestTrida.cs" />
     <Content Include="skoleni.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="skoleni_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>skoleni.mdf</DependentUpon>
     </Content>
   </ItemGroup>

@@ -22,5 +22,7 @@
     <property name="Ulice" />
     <property name="Psc" />
     <property name="Obec" />
+
+    <many-to-one name="Klient" column="klient_id" />
   </class>
 </hibernate-mapping>
