@@ -7,10 +7,8 @@ namespace TestLanguage
     public class TestRegion
     {
         #region PROPERTIES
-
+        
         public string Name { get; set; }
-
-        public int Size { get; set; }
 
         #endregion PROPERTIES//uz nemusí být znova zapsán PROPERTIES ale doporucuju psát
 

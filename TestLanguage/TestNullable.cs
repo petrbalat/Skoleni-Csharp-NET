@@ -1,5 +1,5 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using System.Linq;
 
 namespace TestLanguage
 {
@@ -9,36 +9,9 @@ namespace TestLanguage
         [Test]
         public void Test()
         {
-            Nullable<int> inta = new Nullable<int>();
-            Nullable<int> inta2 = null;
-            int? intb = null;//preferovaný zápis
+            string[] coll = new[] {"aaa", "bb"};
+            string[] strings = coll.Where(s => s.Length == 2).ToArray();
 
-            Assert.IsTrue(inta == intb);
-            Assert.IsTrue(inta == null);
-            Assert.IsFalse(inta.HasValue);
-            Assert.IsFalse(intb.HasValue);
-            Assert.IsFalse(inta2.HasValue);
-
-            try
-            {
-                Console.WriteLine(string.Format("inta.HasValue {0}", intb.Value));//!!! InvalidOperationException
-                Assert.Fail();
-            }
-            catch (InvalidOperationException)
-            {
-            }
-
-            try
-            {
-                Console.WriteLine(string.Format("inta.Value {0}", inta.Value));//!!! InvalidOperationException
-                Assert.Fail();
-            }
-            catch (InvalidOperationException)
-            {
-            }
-
-            int intc = inta ?? 0;
-            Assert.AreEqual(0, intc);
         }
     }
 }

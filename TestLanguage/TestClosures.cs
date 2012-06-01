@@ -12,15 +12,8 @@ namespace TestLanguage
 
         public TestClosures()
         {
-            Poslouchej += delegate(string koho)
-            {
-                Console.WriteLine("OldSchool");//
-            };
-
-            Poslouchej += koho => Console.WriteLine("lambda");
-
-            Poslouchej += StresounOnPoslouchej;
-            Poslouchej += new Bacha(StresounOnPoslouchej);//grand school :-)
+            //            Poslouchej += koho => Console.WriteLine("lambda");
+            //            Poslouchej += StresounOnPoslouchej;
         }
 
         private void StresounOnPoslouchej(string odKoho)
@@ -31,10 +24,7 @@ namespace TestLanguage
         [Test]
         public void Test()
         {
-            if (Poslouchej != null) // pokud není nikdo prihlasenej tak 
-            {
-                Poslouchej("baf");
-            }
+            Poslouchej("baf");
         }
     }
 }

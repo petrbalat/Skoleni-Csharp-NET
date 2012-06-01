@@ -16,7 +16,10 @@ namespace TestLanguage
             string str = null;
             Assert.IsTrue(str.IsNullOrWhiteSpace());//voláno jako StringHelper.IsNullOrWhiteSpace(str) takze bez vyhozeni vyjimky NullReferenceException
 
+
+
             string[] coll = new[] { "aaa", "bbb" }.Prepend("ccc").ToArray();
+
             Console.WriteLine(coll);
         }
     }
@@ -29,6 +32,11 @@ namespace TestLanguage
         }
 
         public static bool IsNullOrWhiteSpace(this string str)
+        {
+            return string.IsNullOrWhiteSpace(str);
+        }
+        
+        public static bool IsNullOrWhiteSpace(this string str, int asb)
         {
             return string.IsNullOrWhiteSpace(str);
         }

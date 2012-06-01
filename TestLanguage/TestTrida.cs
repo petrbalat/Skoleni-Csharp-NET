@@ -12,30 +12,17 @@ namespace TestLanguage
 
     public class TestTrida : ITestTrida
     {
-        public TestTrida(string par)
-        {
-        }
+        public int Size { get; set; }
 
-        private int size;
-        public int Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
-
-        public virtual void TestVirtualMetod()
+        public void TestVirtualMetod()
         {
             Console.WriteLine("TestTrida");
         }
     }
 
     [TestFixture]
-    public sealed class SubTestTrida : TestTrida, ITestTrida
+    public sealed class SubTestTrida : TestTrida
     {
-        public SubTestTrida() : base("construktor predka")
-        {
-        }
-
         public new void TestVirtualMetod()
         {
             Console.WriteLine("SubTestTrida");
@@ -44,10 +31,8 @@ namespace TestLanguage
         [Test]
         public void TestVirtual()
         {
-            ITestTrida itestTrida = new SubTestTrida();
+            TestTrida itestTrida = new SubTestTrida();
             itestTrida.TestVirtualMetod();
-            var testTrida = new TestTrida("");
-            testTrida.TestVirtualMetod();
         }
     }
 }

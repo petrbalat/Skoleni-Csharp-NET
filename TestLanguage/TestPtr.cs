@@ -14,11 +14,11 @@ namespace TestLanguage
         public void PtrTest()
         {
             int actual = 4;
-            Assert.IsFalse(Environment.Is64BitProcess);
+            Assert.IsTrue(Environment.Is64BitProcess);
             unsafe //kvuli IntPtr
             {
                 Assert.AreEqual(4, sizeof(int));
-                Assert.AreEqual(4, sizeof(IntPtr));
+                Assert.AreEqual(8, sizeof(IntPtr));
                 int* iPtr = &actual;
                 Console.WriteLine((int)iPtr); // adresa v pameti
 
@@ -28,9 +28,9 @@ namespace TestLanguage
             }
             Assert.AreEqual(5, actual);
 
-            Console.WriteLine(string.Format("E1 {0} E2 {1}", sizeof(E1), sizeof(E2)));
 
-            MessageBox(0, "Hello", "My Message Box", 0);
+
+            Console.WriteLine(string.Format("E1 {0} E2 {1}", sizeof(E1), sizeof(E2)));
         }
 
         enum E1 : byte

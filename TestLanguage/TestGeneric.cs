@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NUnit.Framework;
+using System.Linq;
 
 namespace TestLanguage
 {
@@ -10,7 +11,7 @@ namespace TestLanguage
         [Test]
         public void Koovariance()
         {
-            IEnumerable<ITestTrida> tridy = new List<ITestTrida> { new TestTrida("a"), new TestTrida("b") { Size = 2 } };
+            IEnumerable<ITestTrida> tridy = new List<TestTrida> { new TestTrida(), new TestTrida() { Size = 2 } };
             Console.WriteLine(tridy);
         }
 
@@ -19,11 +20,11 @@ namespace TestLanguage
         {
             SortedSet<TestTrida> testTridas = new SortedSet<TestTrida>(new TestTridaComparer())
                                                   {
-                                                      new TestTrida("d") { Size = 5 },
-                                                      new TestTrida("e") { Size = 2 },
-                                                      new TestTrida("f") { Size = 8 },
+                                                      new TestTrida() { Size = 5 },
+                                                      new TestTrida() { Size = 2 },
+                                                      new TestTrida() { Size = 8 },
                                                   };
-            testTridas.Add(new TestTrida("g") {Size = 1} );
+            testTridas.Add(new TestTrida() {Size = 1} );
             Console.WriteLine(testTridas);
         }
 

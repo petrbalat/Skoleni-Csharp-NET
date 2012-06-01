@@ -10,6 +10,16 @@ namespace TestLanguage
         private const string FILE = @"c:\Users\balat\Documents\Visual Studio 2010\Projects\Skoleni-Csharp-NET\.gitignore";
 
         [Test]
+        public void TestTryFinal2()
+        {
+            using (var file = File.OpenRead(FILE))
+            {
+                string name = file.Name;
+            }
+
+        }
+
+        [Test]
         public void TestTryFinal()
         {
             StreamReader streamReader = null;
@@ -30,7 +40,7 @@ namespace TestLanguage
         [Test]
         public void TestUsing()
         {
-            using (var streamReader = new StreamReader(File.OpenRead(FILE)))
+            using (StreamReader streamReader = new StreamReader(File.OpenRead(FILE)))
             {
                 Console.WriteLine(streamReader.ReadToEnd());
             }
@@ -39,7 +49,7 @@ namespace TestLanguage
         [Test]
         public void TestUsing2()
         {
-            using (var fileStream = File.OpenRead(FILE))
+            using (FileStream fileStream = File.OpenRead(FILE))
             {
                 using (StreamReader streamReader = new StreamReader(fileStream))
                 {

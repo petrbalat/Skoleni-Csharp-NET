@@ -33,11 +33,7 @@ namespace TestLanguage
     public class Tvor
     {
 
-        #region PROPERTIES
-
         public Pohlavi Typ { get; set; }
-
-        #endregion PROPERTIES
 
         #region OPERATORS
 
