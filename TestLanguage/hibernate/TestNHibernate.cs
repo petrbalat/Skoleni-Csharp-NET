@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlServerCe;
-using System.IO;
 using System.Linq;
 using NHibernate;
 using NHibernate.Cfg;
-using NHibernate.Cfg.MappingSchema;
 using NHibernate.Tool.hbm2ddl;
 using NUnit.Framework;
 using TestLanguage.Hibernate.Entity;
@@ -19,15 +16,14 @@ namespace TestLanguage.Hibernate
         [Test]
         public void Test()
         {
-            Configuration configuration = CreateConfiguration();
-            ISessionFactory sessionFactory = configuration.BuildSessionFactory();
             IEnumerable<Klient> klients = null;
-            using (var session = sessionFactory.OpenSession())
+            using (ISession session = OpenSession())
             {
-                var query = from klient in session.Query<Klient>().FetchMany(klient => klient.Adresy)
+                var query = from klient in session.Query<Klient>()
+                            where klient.Adresy.Any()
                             orderby klient.Name
                             select klient;
-                klients = query.BezStornovanych().ToArray();
+                klients = query.ToArray();
             }
 
             Console.WriteLine(klients);
@@ -36,19 +32,27 @@ namespace TestLanguage.Hibernate
         [Test]
         public void CreateDb()
         {
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "db.sdf");
-            if (File.Exists(path))
-            {
-                File.Delete(path);
-            }
-            var en = new SqlCeEngine("Data Source=|DataDirectory|db.sdf");
-            en.CreateDatabase();
+//            string path = Path.Combine(Directory.GetCurrentDirectory(), "db.sdf");
+//            if (File.Exists(path))
+//            {
+//                File.Delete(path);
+//            }
+//            var en = new SqlCeEngine(string.Format("Data Source={0}", path));
+//            en.CreateDatabase();
             Configuration configuration = CreateConfiguration();
             new SchemaExport(configuration).Execute(true, true, false);
 
             Console.WriteLine(configuration);
         }
 
+
+        private static ISession OpenSession()
+        {
+            Configuration configuration = CreateConfiguration();
+            ISessionFactory sessionFactory = configuration.BuildSessionFactory();
+            return sessionFactory.OpenSession();
+        }
+        
         private static Configuration CreateConfiguration()
         {
             Configuration configuration = new Configuration().Configure();
