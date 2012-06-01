@@ -38,30 +38,36 @@ namespace TestLanguage.Hibernate
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
+                    //1
                     var klient = new Klient
-                                        {
-                                            Name = "Jan Novak",
-                                            Adresy = new HashedSet<Adresa>
-                                            {
-                                                new Adresa {Obec = "Praha", Psc = "12345", Ulice = "Vaclavska"}, new Adresa {Obec = "Brno", Psc = "45678", Ulice = "Moskevska"}
-                                            }
-                                        };
+                    {
+                        Name = "Jan Novak",
+                        Adresy = new HashedSet<Adresa>
+                        {
+                            new Adresa {Obec = "Praha", Psc = "12345", Ulice = "Vaclavska"}, new Adresa {Obec = "Brno", Psc = "45678", Ulice = "Moskevska"}
+                        }
+                    };
                     klient.Adresy.ForEach(adresa => adresa.Klient = klient);
                     session.Merge(klient);
 
-                    session.Merge(new Klient
-                                      {
-                                          Name = "Lojza Mikula",
-                                          Adresy = new HashedSet<Adresa>
-                                                       {
-                                                           new Adresa {Obec = "Hradec Králové", Psc = "55555", Ulice = "Hradecká"},
-                                                       }
-                                      });
-
-                    klient = new Klient { Name = "Franta Bezdomova", };
+                    //2
+                    klient = new Klient
+                    {
+                        Name = "Lojza Mikula",
+                        Adresy = new HashedSet<Adresa>
+                        {
+                            new Adresa {Obec = "Hradec Králové", Psc = "55555", Ulice = "Hradecká"},
+                        }
+                    };
                     klient.Adresy.ForEach(adresa => adresa.Klient = klient);
                     session.Merge(klient);
 
+                    //3
+                    klient = new Klient { Name = "Franta Bezdomova", Adresy = new HashedSet<Adresa>()};
+                    klient.Adresy.ForEach(adresa => adresa.Klient = klient);
+                    session.Merge(klient);
+
+                    //4
                     klient = new Klient
                     {
                         Name = "Jozan Vyřazený",
